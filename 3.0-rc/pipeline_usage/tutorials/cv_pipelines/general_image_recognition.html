@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
     
     
       
@@ -799,6 +799,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -845,11 +847,33 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
+      <a href="../information_extraction_pipelines/document_scene_information_extraction_v3.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     文档场景信息抽取v3产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../information_extraction_pipelines/document_scene_information_extraction_v4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档场景信息抽取v4产线
     
   </span>
   
@@ -6030,9 +6054,9 @@ You're not viewing the latest version.
 <td>索引对应的键，用于标识建立的索引。可用作其他操作的输入。</td>
 </tr>
 <tr>
-<td><code>idMap</code></td>
-<td><code>object</code></td>
-<td>向量ID到标签的映射。</td>
+<td><code>imageCount</code></td>
+<td><code>integer</code></td>
+<td>索引的图像数量。</td>
 </tr>
 </tbody>
 </table>
@@ -6103,9 +6127,9 @@ You're not viewing the latest version.
 </thead>
 <tbody>
 <tr>
-<td><code>idMap</code></td>
-<td><code>object</code></td>
-<td>向量ID到标签的映射。</td>
+<td><code>imageCount</code></td>
+<td><code>integer</code></td>
+<td>索引的图像数量。</td>
 </tr>
 </tbody>
 </table>
@@ -6154,9 +6178,9 @@ You're not viewing the latest version.
 </thead>
 <tbody>
 <tr>
-<td><code>idMap</code></td>
-<td><code>object</code></td>
-<td>向量ID到标签的映射。</td>
+<td><code>imageCount</code></td>
+<td><code>integer</code></td>
+<td>索引的图像数量。</td>
 </tr>
 </tbody>
 </table>
@@ -6327,7 +6351,7 @@ if resp_index_build.status_code != 200:
     pprint.pp(resp_index_build.json())
     sys.exit(1)
 result_index_build = resp_index_build.json()["result"]
-print(f"Number of images indexed: {len(result_index_build['idMap'])}")
+print(f"Number of images indexed: {result_index_build['imageCount']}")
 
 for pair in image_label_pairs_to_add:
     with open(pair["image"], "rb") as file:
@@ -6342,7 +6366,7 @@ if resp_index_add.status_code != 200:
     pprint.pp(resp_index_add.json())
     sys.exit(1)
 result_index_add = resp_index_add.json()["result"]
-print(f"Number of images indexed: {len(result_index_add['idMap'])}")
+print(f"Number of images indexed: {result_index_add['imageCount']}")
 
 payload = {"ids": ids_to_remove, "indexKey": result_index_build["indexKey"]}
 resp_index_remove = requests.post(f"{API_BASE_URL}/shitu-index-remove", json=payload)
@@ -6351,7 +6375,7 @@ if resp_index_remove.status_code != 200:
     pprint.pp(resp_index_remove.json())
     sys.exit(1)
 result_index_remove = resp_index_remove.json()["result"]
-print(f"Number of images indexed: {len(result_index_remove['idMap'])}")
+print(f"Number of images indexed: {result_index_remove['imageCount']}")
 
 with open(infer_image_path, "rb") as file:
     image_bytes = file.read()
@@ -6431,7 +6455,7 @@ pprint.pp(result_infer["detectedObjects"])
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月21日</span>
   </span>
 
     
@@ -6441,7 +6465,7 @@ pprint.pp(result_infer["detectedObjects"])
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月21日</span>
   </span>
 
     
@@ -6456,7 +6480,7 @@ pprint.pp(result_infer["detectedObjects"])
     </span>
     <nav>
       
-        <a href="mailto:1563710292@qq.com">Jonathans575</a>
+        <a href="mailto:31413510@qq.com">a31413510</a>
     </nav>
   </span>
 
