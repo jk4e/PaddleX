@@ -100,6 +100,7 @@ If data partitioning is required, follow these steps:
 cd ./PPOCRLabel # Switch to the PPOCRLabel folder
 python gen_ocr_train_val_test.py --trainValTestRatio 7:3:0 --datasetRootPath ../train_data
 ```
+
 * `trainValTestRatio` is the ratio for dividing images into training, validation, and test sets. Set it according to your needs. The default is `6:2:2`.
 * `datasetRootPath` is the full path to the dataset labeled by PPOCRLabel. The default path is `PaddleOCR/train_data`. Before partitioning the dataset, the structure should be as follows:
 
@@ -117,7 +118,7 @@ python gen_ocr_train_val_test.py --trainValTestRatio 7:3:0 --datasetRootPath ../
   |- word_003.jpg
   | ...
 ```
-For more tool usage instructions, please refer to [Detailed Instructions](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.7/PPOCRLabel/README.md)
+For more tool usage instructions, please refer to [Detailed Instructions](https://github.com/PFCCLab/PPOCRLabel/blob/main/README.md)
 
 
 ## 3. Data Format
