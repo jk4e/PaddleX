@@ -120,4 +120,3 @@ PaddleX supports configuring the inference backend through `PaddlePredictorOptio
 * `get_device`: Get the currently set device;
   * Parameters: None;
   * Return value: `str` type.
-```
