@@ -78,7 +78,7 @@ The meanings of the running results parameters are as follows:
 - `label_names`：Indicates the class name of the prediction result.
 The visualization image is as follows:
 
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/modules/image_classification/general_image_classification_001_res.jpg">
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/modules/textline_ori_classification/textline_rot180_demo_res.jpg">
 
 The explanations for the methods, parameters, etc., are as follows:
 
