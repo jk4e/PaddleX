@@ -69,6 +69,7 @@ After running, the result obtained is:
 ```
 
 The meanings of the running result parameters are as follows:
+
 - `input_path`: Indicates the path of the input image to be corrected.
 - `doctr_img`: Indicates the result of the corrected image. Since there is too much data to print directly, `...` is used here as a placeholder. The prediction result can be saved as an image through `res.save_to_img()` and as a JSON file through `res.save_to_json()`.
 
