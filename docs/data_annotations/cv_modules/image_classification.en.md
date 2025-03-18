@@ -39,6 +39,7 @@ Navigate to the root directory of the dataset to be annotated in the terminal an
 cd path/to/pets
 labelme images --nodata --autosave --output annotations --flags flags.txt
 ```
+
 * `flags` creates classification labels for images, passing in the path to the labels.
 * `nodata` stops storing image data in JSON files.
 * `autosave` enables automatic saving.
@@ -89,3 +90,4 @@ Modified `label.txt`:
 1 classname2
 2 classname3
 ...
+```
