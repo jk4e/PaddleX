@@ -20,7 +20,7 @@ hide:
 
 ## 🔍 Introduction
 
-PaddleX 3.0 is a low-code development tool for AI models built on the PaddlePaddle framework. It integrates numerous<b>ready-to-use pre-trained models</b>, enabling<b>full-process development</b>from model training to inference, supporting<b>a variety of mainstream hardware</b> both domestic and international, and aiding AI developers in industrial practice.
+PaddleX 3.0 is a low-code development tool for AI models built on the PaddlePaddle framework. It integrates numerous <b>ready-to-use pre-trained models</b>, enabling <b>full-process development</b> from model training to inference, supporting <b>a variety of mainstream hardware</b> both domestic and international, and aiding AI developers in industrial practice.
 
 <style>
         .centered-table {
